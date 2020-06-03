@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-    origin: 'https://cadastrorifafront.herokuapp.com/'
+    origin: 'https://cadastrorifafront.herokuapp.com'
 }));
 app.use(express.json());
 app.use(routes);
