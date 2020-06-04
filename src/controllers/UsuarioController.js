@@ -27,7 +27,8 @@ module.exports = {
     async criarUsuario (request, response)  {
         const {nome, email, telefone, logradouro, complemento, localidade, uf, descricao_conhece_mamae_papai, msg_erick} = request.body;
         
-        
+        try {
+
             await connection('usuario').insert({
                 nome,
                 email,
@@ -41,6 +42,11 @@ module.exports = {
             })
         
             return response.json({Mensagem:"Cadastro Concluido com sucesso"});
+
+        } catch(err){
+            return response.json({err});
+        }
+            
 
         },
 
