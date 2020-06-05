@@ -6,10 +6,13 @@ exports.up = function(knex) {
         table.string('nome').notNullable();
         table.string('email').notNullable();
         table.string('telefone').notNullable();
-        table.string('logradouro').notNullable();
-        table.string('complemento').notNullable();
-        table.string('localidade').notNullable();
+        table.string('cep').notNullable();
+        table.string('cidade').notNullable();
         table.string('uf',2).notNullable();
+        table.string('logradouro').notNullable();
+        table.string('bairro').notNullable();
+        table.string('numero').notNullable();
+        table.string('complemento').notNullable();       
         table.string('descricao_conhece_mamae_papai').notNullable();
         table.string('msg_erick');
     })

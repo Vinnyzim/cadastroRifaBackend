@@ -1,8 +1,8 @@
-const connection = require('../database/connection')
+const connection = require('../database/connection');
 
 module.exports = {
+   
 
-    
     //Verifica se já existe email cadastrado
 
     async verificaEmail (request, response){
@@ -25,30 +25,31 @@ module.exports = {
 
     //Criar Usuarios
     async criarUsuario (request, response)  {
-        const {nome, email, telefone, logradouro, complemento, localidade, uf, descricao_conhece_mamae_papai, msg_erick} = request.body;
+        const {nome, email, telefone, cep, cidade, uf, logradouro, bairro, numero, complemento,  descricao_conhece_mamae_papai, msg_erick} = request.body;
         
-        try {
+        
 
             await connection('usuario').insert({
                 nome,
                 email,
                 telefone,
-                logradouro,
-                complemento,
-                localidade,
+                cep,
+                cidade,
                 uf,
+                logradouro,
+                bairro,
+                numero,
+                complemento,             
                 descricao_conhece_mamae_papai,
                 msg_erick,
             })
         
             return response.json({Mensagem:"Cadastro Concluido com sucesso"});
 
-        } catch(err){
-            return response.json({err});
-        }
+        } ,
             
 
-        },
+       
 
         
     

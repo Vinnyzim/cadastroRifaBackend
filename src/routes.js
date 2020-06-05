@@ -18,4 +18,5 @@ routes.post('/usuario', UsuarioController.criarUsuario);
 //Deletar Usuarios
 routes.delete('/usuario/:id', UsuarioController.deletarUsuario);
 
+
 module.exports = routes; 
